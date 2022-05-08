@@ -1,0 +1,39 @@
+<div class="container mt-4">
+	<div class="row">
+	 <div class="col-md-12">
+	 	<h1 class="text-center">Form Tambah Data</h1>
+
+	 	<% if (typeof errors != "undefined") { %>
+		    <div class="alert alert-danger" role="alert">
+			 	<ul>
+			 	<% errors.forEach(error => { %>
+			 	 <li><%= error.msg %></li>
+			 	<% })%>
+			 	</ul>
+			</div>
+	 	<%  } %> 
+	 	<form method="post" action="/contact"  enctype="multipart/form-data">
+		  <div class="form-group mb-2">
+		  	<input type="hidden" value="">
+		    <label for="nama">Nama</label>
+		    <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" placeholder="Masukkan nama anda">
+		  </div>
+		  <div class="form-group mb-2">
+		    <label for="email">Email</label>
+		    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan email anda">
+		  </div>
+		  <div class="form-group mb-2">
+		    <label for="nohp">Nomor Handphone</label>
+		    <input type="text" class="form-control" name="noHP" id="nohp" placeholder="Masukkan nomor handphone anda">
+		  </div>
+		   <div class="form-group mb-2">
+		    <label for="foto">Foto</label>
+		    <input type="file" class="form-control" name="foto" id="foto">
+		  </div>
+		  
+		  <a href="/contact" class="btn btn-danger mt-3">Batal</a>
+		  <button type="submit" class="btn btn-primary mt-3">Tambah</button>
+		</form>
+	 </div>
+	</div>
+</div>
